@@ -4,8 +4,8 @@ import cors from 'cors';
 import router from './auth/employer.js';
 import routerEmployee from './auth/employee.js';
 import routerJob from './routes/job.js';
-import routerMessage from './routes/message';
-import routerBid from './routes/Application';
+import routerMessage from './routes/message.js';
+import routerBid from './routes/Application.js';
 
 
 
