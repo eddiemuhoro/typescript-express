@@ -37,11 +37,11 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-app.use('/employer', router);
-app.use('/employee', routerEmployee);
-app.use('/job', routerJob);
-app.use('/message', routerMessage);
-app.use('/bid', routerBid);
+app.use('/employer', cors(), router);
+app.use('/employee', cors(), routerEmployee);
+app.use('/job', cors(), routerJob);
+app.use('/message',cors(), routerMessage);
+app.use('/bid',cors(), routerBid);
 
 
 
