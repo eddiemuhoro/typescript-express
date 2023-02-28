@@ -4,6 +4,9 @@ import cors from 'cors';
 import router from './auth/employer.js';
 import routerEmployee from './auth/employee.js';
 import routerJob from './routes/job.js';
+import routerMessage from './routes/message';
+import routerBid from './routes/Application';
+
 
 
 
@@ -37,6 +40,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/employer', router);
 app.use('/employee', routerEmployee);
 app.use('/job', routerJob);
+app.use('/message', routerMessage);
+app.use('/bid', routerBid);
 
 
 
