@@ -31,6 +31,9 @@ app.use(function(req, res, next) {
     next();
 });
 
+//remove cors error while postong data
+app.options('*', cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
