@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import router from './auth/employer.js';
 import routerEmployee from './auth/employee.js';
+import routerJob from './routes/job.js';
+
 
 
 dotenv.config();
@@ -34,6 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/employer', router);
 app.use('/employee', routerEmployee);
+app.use('/job', routerJob);
 
 
 
