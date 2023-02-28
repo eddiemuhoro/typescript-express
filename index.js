@@ -2,6 +2,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import router from './auth/employer.js';
+import routerEmployee from './auth/employee.js';
+
 
 dotenv.config();
 
@@ -31,10 +33,11 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use('/employer', router);
+app.use('/employee', routerEmployee);
 
 
 
-const port= 4000 || process.env.PORT
+const port= 7000 || process.env.PORT
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
