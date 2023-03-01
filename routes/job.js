@@ -92,6 +92,36 @@ router.get('/favorite/:id', async (req, res)=>{
 )
 
 
+// update a job
+router.put('/:id', async (req, res) => {
+    const { title, description, employerId, skills } = req.body;
+    const job = await prisma.job.update({
+        where: {
+            id: String(req.params.id)
+        },
+        data: {
+            title: title,
+            description: description,
+            employerId: employerId,
+            skills: skills
+        }
+    })
+    res.json(job);
+}
+)
+
+//delete a job
+router.delete('/:id', async (req, res)=>{
+    const job = await prisma.job.delete({
+        where: {
+            id: String(req.params.id)
+        }
+    })
+    res.json(job);
+}
+)
+
+
 // router.delete('/:id', async (req, res)=>{
  
 //     const job = await prisma.job.delete({
