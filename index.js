@@ -48,7 +48,7 @@ app.use('/bid',cors(), routerBid);
 
 
 
-const port= 7000 || process.env.PORT
+const port= 9000 || process.env.PORT
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

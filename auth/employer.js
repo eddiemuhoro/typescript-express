@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/register', async (req, res)=>{
     const { name, email, password, phone } = req.body;
-    const employee = await prisma.employee.create({
+    const employer = await prisma.employer.create({
         data: {
             name,
             email,
@@ -19,30 +19,30 @@ router.post('/register', async (req, res)=>{
             email: true,
         }
     })
-    res.json(employee);
+    res.json(employer);
 }
 )
 
 
 router.post('/login', async (req, res)=>{
     const { email, password } = req.body;
-    const employee = await prisma.employee.findUnique({
+    const employer = await prisma.employer.findUnique({
         where: {
             email: email
         }
     })
-    if(employee?.password === password){
-        res.json(employee);
+    if(employer?.password === password){
+        res.json(employer);
     }else{
         res.json({message: 'Wrong credentials'});
     }
 }
 )
 
-//get all employees
+//get all employers
 router.get('/', async (req, res)=>{
-    const employees = await prisma.employee.findMany();
-    res.json(employees);
+    const employers = await prisma.employer.findMany();
+    res.json(employers);
 }
 )
 
