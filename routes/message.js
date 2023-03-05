@@ -31,4 +31,15 @@ router.get('/:id', async (req, res)=>{
 }
 )
 
+//delete a message
+router.delete('/:id', async (req, res)=>{
+    const message = await prisma.message.delete({
+        where: {
+            id: String(req.params.id)
+        }
+    })
+    res.json(message);
+}
+)
+
 export default router;

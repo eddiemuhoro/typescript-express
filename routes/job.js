@@ -61,7 +61,7 @@ router.put('/favorite/:id', async (req, res) => {
         data: {
             isFavorite: isFavorite,
             favoritedBy: byFreelancer
-
+            
         }
     })
     res.json(job);
